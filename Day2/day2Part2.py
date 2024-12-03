@@ -11,14 +11,12 @@ class Day2:
 
     def safety_check(self, lines):
         def is_safe(sequence):
-            # Check if the sequence is strictly increasing or decreasing
             is_increasing = all(sequence[i] < sequence[i+1] for i in range(len(sequence)-1))
             is_decreasing = all(sequence[i] > sequence[i+1] for i in range(len(sequence)-1))
             
             if not (is_increasing or is_decreasing):
                 return False
             
-            # Check if all adjacent differences are within the allowed range
             for i in range(len(sequence)-1):
                 diff = abs(sequence[i+1] - sequence[i])
                 if diff < 1 or diff > 3:
@@ -26,7 +24,6 @@ class Day2:
             
             return True
 
-        # Check if the original sequence is safe
         if is_safe(lines):
             return True
 
@@ -36,7 +33,6 @@ class Day2:
             if is_safe(modified_sequence):
                 return True
 
-        # If no single removal makes the sequence safe, it's unsafe
         return False
 
     def count_safe_lines(self, raw_data):
