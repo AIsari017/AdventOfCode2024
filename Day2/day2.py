@@ -51,3 +51,4 @@ safe_lines_count = day2_processor.count_safe_lines(raw_data)
 
 print(f"Number of safe lines: {safe_lines_count}")
 
+123
